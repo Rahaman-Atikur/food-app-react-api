@@ -13,13 +13,11 @@ const Category = ({ setSelectedCategory }) => {
             <div className='flex content-center justify-center gap-5 mt-5'>
                 {
                     category.map((cat) => <button className='btn btn-primary bg-sky-400 ' onClick={() => setSelectedCategory(cat.strCategory)} key={cat.idCategory}>{cat.strCategory}</button>)
-
                 }
             </div>
             <div>
                 {
                     category.map((categoryImage) => <img className='h-[50px] w-[50px]' src={categoryImage.strCategoryThumb} alt="" />)
-
                 }
 
             </div>
