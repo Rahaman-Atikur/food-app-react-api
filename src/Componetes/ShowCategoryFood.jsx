@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 const ShowCategoryFood = ({ selectedCategory }) => {
     const [foodCategory, setFoodCategory] = useState([])
     useEffect(() => {
-        fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${selectedCategory}`)
+        fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${selectedCategory}`)
             .then((res) => res.json())
             .then((data) => setFoodCategory(data.meals));
     }, [selectedCategory])
@@ -11,8 +11,8 @@ const ShowCategoryFood = ({ selectedCategory }) => {
         <div>
             {
                 foodCategory.map((food =><div>
-                    <p>food.strMeal</p>
-                    <img src={food.strMealThumb} alt="" />
+                    <p>{food.strCategoryDescription}</p>
+                    <img src={food.strCategoryThumb} alt="" />
                 </div>))
             }
         </div>
